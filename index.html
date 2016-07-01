@@ -21,6 +21,11 @@
 		<![endif]-->
 	</head>
 	<body ng-controller="pinguController as pingu">
+
+<!--The code below templates the fixed-top navbar which will sit at the top of the page until
+the user scrolls past the jumbotron and then remains at the top of the window beyond that point.
+It will also auto-hide when the user scrolls above the jumbotron-->
+
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
 				<div class="navbar-header">
@@ -30,7 +35,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">Mawaru Penguindrum</a>
+					<a class="navbar-brand" href="#">UTD Robosub</a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expands="false" aria-controls="navbar">
@@ -57,17 +62,27 @@
 				</div>
 			</div>
 		</nav>
+
+<!--The code below templates the jumbotron which will serve as the header for the webpage
+with the organization's name and a short quote or motto-->
+
 		<div class="jumbotron">
 			<div class="container">
-				<h1>Mawaru Penguindrum</h1>
+				<h1>UTD Robosub</h1>
 				<p>This is the destination of your fate. Is it the end? Or is it the beginning? In your journey to take back what was lost, just don't forget your survival strategy...</p>
 
 				<p><a class="btn btn-primary btn-lg" href="#" role="button">Let's Begin &raquo;</a></p>
 			</div>
 		</div>
+
+<!--The code below templates the "important updates" section. This is where time-sensitive information
+such as meeting times and production schedules will be posted-->
+
 		<section class="container emphasisBlurb" ng-controller="blurbController as blurber">
 			<div class="row emphasisBlurb blurbRow">
+
 				<!--The Meeting Times list and the In Production list will be populated by a JSON array-->
+
 				<div class="col-sm-6" >
 					<div class="blurbLeft">
 						<a class="blurbLeftAnchor" href="#">
@@ -92,8 +107,8 @@
 									<br>
 										<ol>
 											<li><b>Blurb Buttons</b></li>
-											<li><b>Teams/Activities Sliders</b></li>
-											<li><b>Sponsors/Thanks Section</b></li>
+											<li><b>Teams/ Activities Sliders</b></li>
+											<li><b>Sponsors/ Thanks Section</b></li>
 											<li><b>Contact Info and Disclaimer</b></li>
 										</ol>
 							</span>
@@ -101,7 +116,9 @@
 					</div><!--/blurbLeft-->
 					<h3 class="blurbLeftTitle">{{blurber.titleLeft}}</h3>
 				</div>
+
 				<!--The emails and names will be populated with a JSON array-->
+
 				<div class="col-sm-6">
 					<div class="blurbRight">
 						<a class="blurbLeftAnchor" href="#">
@@ -122,6 +139,9 @@
 			</div>
 		</section>
 
+<!--The code below templates the tab driven content section. 
+Content will be loaded based on the selected tab.			-->
+
 		<section class="container" ng-controller="tabController as tabCont">
 			<ul class="nav nav-pills">
 				<li ng-class="{active:tabCont.isTab(1)}">
@@ -136,7 +156,7 @@
 				<div class="col-sm-6">
 					
 <!--					<?php-->
-<!--						print"--><img ng-src="images/Penguindrum_End24.jpg" alt="Image of the Penguindrum" width="360">
+<!--						print"--><img ng-src="images/UTD_Robosub.jpg" alt="[[Image of the UTD Robosub]]" width="100%">
 <!--					?>-->
 				</div>
 				<div class="col-sm-6">
@@ -148,6 +168,9 @@
 					</p>
 				</div>
 			</div>
+			
+<!--This is where the tab-driven content will appear-->
+			
 			<div ng-show="tabCont.isTab(1)">
 				<h4>{{pingu.family[1].name}}</h4>
 				<blockquote>{{pingu.family[1].description}}</blockquote>
@@ -170,6 +193,8 @@
 				</p>
 			</div>
 		</section>
+
+
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
